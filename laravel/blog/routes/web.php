@@ -22,12 +22,12 @@ Route::group(['middleware' =>'admin',], function () {
     Route::get('/sel', 'UserController@sel');
     Route::post('/add', 'UserController@add');
 });
-Route::get('/shop', 'ShopController@sel');
+
 Route::get('/show', 'LoginController@show');
 Route::get('/out', 'LoginController@out');
 Route::post('/login', 'LoginController@login');
-Route::get('/sort', 'ShopController@sort');
+
 Route::get('/tree', 'ShopController@tree');
-Route::get('/floor', 'ShopController@floor');
+
 
 //Route::get('res', 'AuthController@respondWithToken');

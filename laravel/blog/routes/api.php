@@ -40,3 +40,7 @@ Route::post('/orders_add', 'CarController@orders_add');
 Route::get('/pay', 'PayController@index');
 Route::get('/return', 'PayController@return');
 Route::get('/notify', 'PayController@notify');
+
+Route::get('/floor', 'ShopController@floor');
+Route::get('/shop', 'ShopController@sel');
+Route::get('/sort', 'ShopController@sort');

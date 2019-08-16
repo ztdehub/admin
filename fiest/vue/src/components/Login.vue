@@ -86,7 +86,7 @@ export default {
             console.log(res.data.access_token);
             localStorage.setItem("name", res.data.access_token);
             localStorage.setItem("youname", this.useinfo.username);
-            this.$router.push({name: 'Shop'});
+            this.$router.push({name: '/Shop'});
           }
         })
         .catch(err => {

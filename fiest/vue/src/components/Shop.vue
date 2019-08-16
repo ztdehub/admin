@@ -412,14 +412,13 @@ export default {
       floor: [],
       goods: [],
     }
-    console.log(sort)
   },
   mounted () {
-    axios.get('http://localhost/laravel/blog/public/shop')
+    axios.get(this.url+'/shop')
       .then(response => (this.msg = response.data))
-    axios.get('http://localhost/laravel/blog/public/sort')
+    axios.get(this.url+'/sort')
       .then(response => (this.sort = response.data))
-    axios.get('http://localhost/laravel/blog/public/floor')
+    axios.get(this.url+'/floor')
       .then(response => (this.floor = response.data))
       .catch(function (error) {
         console.log(error)
