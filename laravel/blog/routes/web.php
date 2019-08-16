@@ -26,8 +26,5 @@ Route::group(['middleware' =>'admin',], function () {
 Route::get('/show', 'LoginController@show');
 Route::get('/out', 'LoginController@out');
 Route::post('/login', 'LoginController@login');
-
 Route::get('/tree', 'ShopController@tree');
-
-
 //Route::get('res', 'AuthController@respondWithToken');
