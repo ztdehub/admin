@@ -494,7 +494,7 @@ export default {
     num () {
       if(this.price[0].id) {
         var num=document.getElementById("num").value
-        axios.post('http://localhost/laravel/blog/public/api/products',{
+        axios.post(this.url+'/products',{
           num:num,
           goods:this.price[0].id,
           user:localStorage.getItem("youname"),
@@ -533,7 +533,7 @@ export default {
           _this.attr=_this.attr +" "+$("input[name='"+keys+"']:checked").attr('name')+":"+ $("input[name='"+keys+"']:checked").attr('html')
         })
         //获取价格的
-        axios.post('http://localhost/laravel/blog/public/api/product',{
+        axios.post(this.url+'/product',{
           id:_this.id,
           name:this.$route.query.aId,
         })
@@ -549,7 +549,7 @@ export default {
   },
   mounted () {
     console.log(this.id)
-    axios.post('http://localhost/laravel/blog/public/api/goods',{
+    axios.post(this.url+'/goods',{
       id:this.$route.query.aId
     })
       .then(response =>{

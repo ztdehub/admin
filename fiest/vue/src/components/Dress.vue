@@ -183,13 +183,13 @@ export default {
     'v-user':User
   },
   mounted () {
-    axios.post('http://localhost/laravel/blog/public/api/area', {
+    axios.post(this.url+'/area', {
       token: localStorage.getItem("name"),
     })
       .then(response => {
         this.area = response.data
       }),
-      axios.post('http://localhost/laravel/blog/public/api/citysel', {
+      axios.post(this.url+'/citysel', {
         token: localStorage.getItem("name"),
       })
         .then(response => {
@@ -199,7 +199,7 @@ export default {
   methods : {
     address () {
       var id=$('#count option:selected') .val()
-      axios.post('http://localhost/laravel/blog/public/api/city', {
+      axios.post(this.url+'/city', {
         token: localStorage.getItem("name"),
         id:id
       })
@@ -209,7 +209,7 @@ export default {
     },
     dses () {
       var id=$('#city option:selected').val()
-      axios.post('http://localhost/laravel/blog/public/api/city', {
+      axios.post(this.url+'/city', {
         token: localStorage.getItem("name"),
         id:id
       })
@@ -224,14 +224,14 @@ export default {
       var town=$('#townt option:selected').html()
       var address=province+"省"+city+"市"+town
       this.cityadd=address
-      axios.post('http://localhost/laravel/blog/public/api/cityadd', {
+      axios.post(this.url+'/cityadd', {
         token: localStorage.getItem("name"),
         city:this.cityadd
       })
         .then(response => {
           console.log(response)
           alert("添加成功")
-          axios.post('http://localhost/laravel/blog/public/api/citysel', {
+          axios.post(this.url+'/citysel', {
             token: localStorage.getItem("name"),
           })
             .then(response => {

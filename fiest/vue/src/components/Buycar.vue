@@ -175,7 +175,7 @@ export default {
     }
   },
   mounted () {
-    axios.post('http://localhost/laravel/blog/public/api/car',{
+    axios.post(this.url+'/car',{
       token:localStorage.getItem("name"),
     })
       .then(response => {
@@ -184,7 +184,7 @@ export default {
   },
   methods : {
     greed (res,id) {
-      axios.post('http://localhost/laravel/blog/public/api/number',{
+      axios.post(this.url+'/number',{
         token:localStorage.getItem("name"),
         number:res,
         id:id

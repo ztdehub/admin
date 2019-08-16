@@ -296,7 +296,7 @@ export default {
     }
   },
   mounted () {
-    axios.post('http://localhost/laravel/blog/public/api/orders',{
+    axios.post(this.url+'/orders',{
       token:localStorage.getItem("name"),
       number:localStorage.getItem("order"),
     })
@@ -313,13 +313,13 @@ export default {
   },
   methods : {
     orders () {
-      axios.post('http://localhost/laravel/blog/public/api/orders_add',{
+      axios.post(this.url+'/orders_add',{
         token:localStorage.getItem("name"),
         number:localStorage.getItem("order"),
       })
         .then(response => {
           var token=localStorage.getItem("name")
-          location.href="http://localhost/laravel/blog/public/api/pay?token="+token+"&oid="+response.data[0]+"&order="+response.data[1]
+          location.href=this.url+"/pay?token="+token+"&oid="+response.data[0]+"&order="+response.data[1]
         })
     }
   }
